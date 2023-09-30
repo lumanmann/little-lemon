@@ -1,0 +1,110 @@
+.container {
+  max-width: 100vw;
+  padding-left: 12px;
+  padding-right: 12px;
+
+  @include md {
+    max-width: 696px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @include lg {
+    max-width: 1024px;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mb-28 {
+  margin-bottom: 28px;
+}
+
+.mb-36 {
+  margin-bottom: 36px;
+}
+
+.me-20 {
+  margin-right: 20px;
+}
+
+.me-28 {
+  margin-right: 28px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.title {
+  @include markazi;
+  font-weight: 500;
+  font-size: 4rem;
+  line-height: 1;
+}
+
+.secondary-title {
+  @include markazi;
+  color: $secondary;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 1.1;
+}
+
+.subtitle {
+  @include markazi;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.white {
+  color: white;
+}
+
+.button {
+  @include button-style;
+
+  @include lg {
+    width: 150px;
+    height: 100%;
+  }
+}
+
+.button:hover,
+.button:focus {
+  background-color: $important;
+  color: $highlight;
+}
+
+.align-center {
+  align-items: center;
+}

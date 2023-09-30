@@ -1,0 +1,16 @@
+@import './base/font';
+@import './base/reset';
+
+@import './base/variables';
+@import './base/base';
+
+@import './utils/mixins';
+@import './utils/helper';
+
+@import './pages/nav';
+@import './pages/footer';
+
+@import './pages/home/about';
+@import './pages/home/booking';
+@import './pages/home/testimonials';
+@import './pages/home/specials';

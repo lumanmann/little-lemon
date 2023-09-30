@@ -1,0 +1,61 @@
+.booking {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("../../../images/restaurant.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 40px 12px;
+
+
+    @include lg {
+        background-image: none;
+        background-color: $primary;
+         padding-top: 40px;
+    padding-bottom: 40px;
+    }
+}
+
+.booking h1 {
+    max-width: 90vw;
+}
+
+.booking p {
+    font-size: 1.25rem;
+   
+
+    @include lg {
+        max-width: 422px;
+    }
+
+}
+
+.booking img {
+    border-radius: 16px;
+    display: none;
+
+    @include lg {
+        display: inline-block;
+        max-width: 375px;
+    }
+}
+
+.action-button {
+    @include button-style;
+    
+    background-color: $secondary;
+    color: black;
+    font-weight: 600;
+    font-size: 22px;
+    width: 80vw;
+  
+    @include lg {
+      width: 200px;
+      height: 60px;
+    }
+  }
+  
+  .action-button:hover,
+  .action-button:focus {
+    background-color: $highlight;
+    color: white;
+  }
+  

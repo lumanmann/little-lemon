@@ -1,0 +1,48 @@
+@mixin md {
+  @media (min-width: 720px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 1060px) {
+    @content;
+  }
+}
+
+@mixin karla {
+  font-family: "Karla", sans-serif;
+}
+
+@mixin markazi {
+  font-family: "Markazi Text", serif;
+}
+
+
+@mixin button-style {
+  background-color: $primary;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  @include karla;
+  font-size: 20px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 1.5rem;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
