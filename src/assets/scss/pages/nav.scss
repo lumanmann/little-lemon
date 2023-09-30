@@ -1,0 +1,92 @@
+.logo {
+  max-width: 40vw;
+
+  @include lg {
+    max-width: 245px;
+    max-height: 4rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  padding-top: 20px;
+  padding-bottom: 10px;
+
+  @include lg {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.navbar a {
+  color: $dark;
+  font-weight: 700;
+}
+
+.navbar-menu {
+  display: none;
+  width: 0px;
+  align-items: center;
+  vertical-align: baseline;
+
+  @include lg {
+    width: auto;
+    display: flex;
+  }
+}
+
+.navbar-btn {
+  cursor: pointer;
+  background-color: white;
+  border: 0;
+  color: $dark;
+  display: inline-block;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.navbar-btn:hover {
+  transform: scale(1.1);
+}
+
+.navbar-dropdown {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  min-height: calc(100vh - 100px);
+  background-color: $light;
+  border-top: 1px solid $dark;
+  display: none; //
+  align-items: self-start;
+  justify-content: start;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.navbar-dropdown a {
+  line-height: 1.2;
+  margin: 16px 16px;
+}
+
+.navbar-menu li {
+  margin-right: 22px;
+}
+
+.navbar li:last-child {
+  margin-right: 0px;
+}
+
+.nav-item {
+  font-size: 1rem;
+
+  @include lg {
+    font-size: 1.25rem;
+  }
+}
