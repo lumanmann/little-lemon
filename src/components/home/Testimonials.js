@@ -5,7 +5,7 @@ const Testimonials = () => {
   return (
     <section className="testimonials">
       <div className="container">
-        <h2 className="title mb-36">Testimonials</h2>
+        <h2 className="section-title  mb-36">Testimonials</h2>
         <ul className="testimonial-cards">
           <li>
             <Card image={Noah} name="Noah asdsdsdsad" content="Best food I ever have!" />

@@ -6,7 +6,7 @@ const Booking = () => {
       <div className="container">
         <div className="booking-content flex space-between">
           <div> 
-        <h1 className="secondary-title">Little Lemon</h1>
+        <h1 className="title secondary">Little Lemon</h1>
         <h2 className="subtitle white mb-28">Chicago</h2>
         <p className="mb-36">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

@@ -64,16 +64,15 @@
   width: 100%;
 }
 
-.title {
+.section-title {
   @include markazi;
   font-weight: 500;
   font-size: 4rem;
   line-height: 1;
 }
 
-.secondary-title {
+.title {
   @include markazi;
-  color: $secondary;
   font-weight: 600;
   font-size: 4rem;
   line-height: 1.1;
@@ -88,6 +87,14 @@
 
 .white {
   color: white;
+}
+
+.primary {
+  color: $primary;
+}
+
+.secondary {
+  color: $secondary;
 }
 
 .button {

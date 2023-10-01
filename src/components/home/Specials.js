@@ -8,7 +8,7 @@ const Specials = () => {
     <section className="specials">
       <div class="container">
         <div class="flex space-between mb-36 align-center">
-          <h2 className="title">Specials</h2>
+          <h2 className="section-title ">Specials</h2>
           <button className="button specials-btn">Online Menu</button>
         </div>
 

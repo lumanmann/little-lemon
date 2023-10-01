@@ -1,7 +1,73 @@
 .about-us {
+  padding-top: 36px;
+  padding-bottom: 20px;
+  padding-left: 12px;
+  padding-right: 12px;
 
+  @include lg {
+    padding: 100px;
+  }
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column-reverse;
+
+  @include lg {
+    flex-direction: row;
+  }
 }
 
 .about-text {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
+  max-width: 100%;
+
+  @include lg {
+    max-width: 33vw;
+    height: 35vh;
+  }
+}
+
+.about-images {
+  position: relative;
+  height: 43vh;
+  top: 0;
+  left: 0;
+
+  @include lg {
+    height: 100%;
+  }
+}
+
+.about-images img {
+  max-width: 40vw;
+  object-fit: cover;
+  border-radius: 16px;
+  aspect-ratio: calc(276 / 338);
+
+  @include lg {
+    max-width: 272px;
+    height: 338px;
+  }
+}
+
+.about-img-2 {
+  position: relative;
+  top: 0;
+  left: calc(40vw);
+
+  @include lg {
+    left: 222px;
+  }
+}
+
+.about-img-1 {
+  position: absolute;
+  top: 88px;
+  left: 48px;
+
+  @include lg {
+    top: 107px;
+    left: 52px;
+  }
 }
