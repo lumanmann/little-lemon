@@ -1,3 +1,58 @@
 .footer {
-    background-color: $light-grey;
+  background-color: $light-grey;
+  color: $dark;
+  font-size: 0.825rem;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 60px 12px;
+
+  @include lg {
+    padding: 80px 0;
+  }
+}
+
+.footer-logo {
+  max-width: 126px;
+  object-fit: contain;
+  display: none;
+
+  @include lg {
+    display: block;
+  }
+}
+
+.footer-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.footer-nav {
+  display: none;
+
+  @include lg {
+    display: block;
+  }
+}
+
+.footer-contact {
+  padding-right: 24px;
+
+  @include lg {
+    padding-right: 0px;
+  }
+}
+
+.footer-contact a:hover {
+  color: $primary;
+}
+
+.social-media img {
+  max-width: 24px;
+  object-fit: contain;
+  margin-right: 12px;
+  color: $dark;
 }

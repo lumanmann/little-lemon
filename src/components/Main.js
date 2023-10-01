@@ -1,10 +1,13 @@
-const Main = () => {
+import { Routes, Route } from "react-router-dom";
+import Homepage from "../pages/Homepage";
 
-    return (
-      <main>
-          <p>main</p>
-      </main>
-    );
-  };
-  
+const Main = () => {
+  return (
+    // <Routes>
+    //   <Route path="/" element={<Homepage />} />
+    // </Routes>
+    <></>
+  );
+};
+
 export default Main;
