@@ -7,8 +7,8 @@ const About = () => {
       <div className="container">
         <div className="about-content flex">
           <div>
-            <h1 className="title primary">Little Lemon</h1>
-            <h2 className="subtitle primary mb-28">Chicago</h2>
+            <h2 className="title primary about-title">Little Lemon</h2>
+            <h3 className="subtitle primary mb-28">Chicago</h3>
             <p className="about-text mb-36 me-36">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
 Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. 

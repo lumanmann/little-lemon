@@ -30,12 +30,12 @@ body {
 a {
   display: block;
   color: $dark;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
 }
 
 a:hover {
-  color: $highlight;
+  text-decoration: underline;
 }
 
 section {
@@ -46,3 +46,28 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+button {
+  background-color: $primary;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 1.5rem;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
