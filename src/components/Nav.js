@@ -1,6 +1,7 @@
 import "../assets/scss/all.scss";
 import Header from "./Header";
 import "@material-design-icons/font/filled.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
@@ -13,67 +14,67 @@ const Nav = () => {
           </button>
           <ul className="navbar-menu">
             <li>
-              <a href="#" className="nav-item">
+              <Link to="/" className="nav-item">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-item">
+              <Link to="/about" className="nav-item">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-item">
+              <Link to="/menu" className="nav-item">
                 Menu
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-item">
+              <Link to="/reservations" className="nav-item">
                 Reservations
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-item">
+              <Link to="/order" className="nav-item">
                 Order Online
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="nav-item">
+              <Link to="/login" className="nav-item">
                 Login
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="navbar-dropdown">
             <ul>
               <li>
-                <a href="#" className="nav-item">
+                <Link to="/" className="nav-item">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-item">
+                <Link to="/about" className="nav-item">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-item">
+                <Link to="/menu" className="nav-item">
                   Menu
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-item">
+                <Link to="/reservations" className="nav-item">
                   Reservations
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-item">
+                <Link to="/order" className="nav-item">
                   Order Online
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="nav-item">
+                <Link to="/login" className="nav-item">
                   Login
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

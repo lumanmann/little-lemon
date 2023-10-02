@@ -1,6 +1,7 @@
 import Logo from "../assets/images/Asset 18@4x.png";
 import Instagram from "../assets/images/logo-instagram.png";
 import Facebbok from "../assets/images/logo-facebook.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -10,12 +11,24 @@ const Footer = () => {
           <img src={Logo} alt="logo" className="footer-logo"></img>
           <ul className="footer-nav">
             <li className="footer-title">Doormat Navigation</li>
-            <li>Home</li>
-            <li>About</li>
-            <li>Menu</li>
-            <li>Reservations</li>
-            <li>Order Online</li>
-            <li>Login</li>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/menu">Menu</Link>
+            </li>
+            <li>
+              <Link to="/reservations">Reservations</Link>
+            </li>
+            <li>
+              <Link to="/order">Order</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
           </ul>
           <ul className="footer-contact">
             <li className="footer-title">Contact</li>

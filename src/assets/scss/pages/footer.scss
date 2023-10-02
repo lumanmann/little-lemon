@@ -19,7 +19,7 @@
   object-fit: contain;
   display: none;
 
-  @include lg {
+  @include md {
     display: block;
   }
 }
