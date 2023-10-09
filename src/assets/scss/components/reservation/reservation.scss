@@ -1,0 +1,67 @@
+.reservation-header {
+  padding: 12px 12px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+
+  @include lg {
+    padding: 18px 15%;
+  }
+}
+
+.reservation-title {
+  @include markazi;
+  font-weight: 500;
+  font-size: 2rem;
+  color: $primary;
+  width: 100%;
+  border-bottom: 1px solid black;
+  padding: 0 12px;
+  margin-bottom: 12px;
+}
+
+.reservation-header p {
+  padding: 0 12px;
+  width: 100%;
+  text-align: center;
+
+  @include lg {
+    padding: 0 10vw;
+  }
+}
+
+// form
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    align-items: center;
+    width: 100%;
+    padding: 0 12px;
+
+    @include lg {
+        padding: 12px 10vw;
+    }
+}
+
+.reservation-form-list {
+  padding: 12px;
+  width: 100%;
+
+  @include md {
+    width: clamp(300px, 80%, 500px);
+  }
+
+  @include lg {
+      padding: 18px;
+  }
+}
+
+.reservation-form-list li {
+  margin-bottom: 12px;
+
+  @include lg {
+    margin-bottom: 18px;
+
+  }
+}

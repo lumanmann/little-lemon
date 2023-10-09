@@ -1,12 +1,13 @@
-import "../assets/scss/all.scss";
 import ReservationForm from "../components/reservation/ReservationForm";
+import ReservationHeader from "../components/reservation/ReservationHeader";
 
-const Reservation = () => {
+
+export default function Reservation() {
+
   return (
-    <main>
+    <>
+      <ReservationHeader />
       <ReservationForm />
-    </main>
+    </>
   );
-};
-
-export default Reservation;
+}
