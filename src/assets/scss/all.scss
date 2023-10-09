@@ -6,13 +6,15 @@
 
 @import './utils/mixins';
 @import './utils/helper';
+@import './utils/utils';
 
-@import './pages/nav';
-@import './pages/footer';
+@import './components/nav';
+@import './components/footer';
 
-@import './pages/home/landing';
-@import './pages/home/specials';
-@import './pages/home/testimonials';
-@import './pages/home/about';
+@import './components/home/landing';
+@import './components/home/specials';
+@import './components/home/testimonials';
+@import './components/home/about';
 
+@import './components/reservation/reservation.scss';
 
