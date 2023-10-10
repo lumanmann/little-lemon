@@ -143,6 +143,10 @@
   background: $secondary;
 }
 
+.bg-highlight {
+  background: $highlight;
+}
+
 // button
 .button {
   @include karla;
