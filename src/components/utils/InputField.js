@@ -1,5 +1,3 @@
-import React from 'react';
-
 const InputField = ({ type, title, options, onChange, ...props }) => {
   let inputElement;
 
@@ -11,26 +9,43 @@ const InputField = ({ type, title, options, onChange, ...props }) => {
 
   switch (type) {
     case 'date':
-      const today = new Date().toISOString().split('T')[0];
-      inputElement = <input type="date" className='input-element' id='datepicker' min={today}  onChange={handleInputChange} {...props} />;
+      var today = new Date();
+      inputElement = (
+        <input
+          type="date"
+          className="input-element"
+          id="datepicker"
+          min={today.toISOString().split('T')[0]}
+          onChange={handleInputChange}
+          {...props}
+        />
+      );
       break;
     case 'text':
-      inputElement = <input type="text" className='input-element' onChange={handleInputChange} {...props} />;
+      inputElement = (
+        <input type="text" className="input-element" onChange={handleInputChange} {...props} />
+      );
       break;
     case 'number':
-      inputElement = <input type="number" className='input-element' onChange={handleInputChange} {...props} />;
+      inputElement = (
+        <input type="number" className="input-element" onChange={handleInputChange} {...props} />
+      );
       break;
     case 'email':
-      inputElement = <input type="email" className='input-element' onChange={handleInputChange} {...props} />;
+      inputElement = (
+        <input type="email" className="input-element" onChange={handleInputChange} {...props} />
+      );
       break;
     case 'phone':
-      inputElement = <input type="tel" className='input-element' onChange={handleInputChange} {...props} />;
+      inputElement = (
+        <input type="tel" className="input-element" onChange={handleInputChange} {...props} />
+      );
       break;
     case 'option':
       inputElement = (
-        <select onChange={handleInputChange} {...props} className='input-element input-option'>
-          {options.map((option, index) => (
-            <option key={index} value={option.value}>
+        <select onChange={handleInputChange} {...props} className="input-element input-option">
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
               {option.label}
             </option>
           ))}
@@ -38,15 +53,19 @@ const InputField = ({ type, title, options, onChange, ...props }) => {
       );
       break;
     case 'textarea':
-      inputElement = <textarea className='input-element' rows={8} onChange={handleInputChange} {...props} />;
+      inputElement = (
+        <textarea className="input-element" rows={8} onChange={handleInputChange} {...props} />
+      );
       break;
     default:
-      inputElement = <input type="text" className='input-element'  onChange={handleInputChange} {...props} />;
+      inputElement = (
+        <input type="text" className="input-element" onChange={handleInputChange} {...props} />
+      );
   }
 
   return (
-    <div className='primary input-field'>
-      <label className='primary d-block me-16'>{title}</label>
+    <div className="primary input-field">
+      <label className="primary d-block me-16">{title}</label>
       {inputElement}
     </div>
   );

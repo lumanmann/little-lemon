@@ -1,65 +1,20 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import InputField from "../utils/InputField";
+import InputField from '../utils/InputField';
 
-const ReservationForm = (props) => {
-  const [formData, setFormData] = useState({
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
-    date: "",
-    time: "12:00",
-    occasion: "none",
-    preference: "none",
-    guests: "",
-    other: "",
-  });
-
+const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandler }) => {
   const occasionOptions = [
-    { value: "none", label: "None" },
-    { value: "birthday", label: "Birthday" },
-    { value: "anniversary", label: "Anniversary" },
-    { value: "engagement", label: "Engagement" },
-    { value: "other", label: "Other" },
+    { value: 'none', label: 'None' },
+    { value: 'birthday', label: 'Birthday' },
+    { value: 'anniversary', label: 'Anniversary' },
+    { value: 'engagement', label: 'Engagement' },
+    { value: 'other', label: 'Other' }
   ];
 
   const preferenceOptions = [
-    { value: "none", label: "None" },
-    { value: "indoor", label: "Indoor" },
-    { value: "outdoor1", label: "Outdoor (Patio)" },
-    { value: "outdoor2", label: "Outdoor (Sidewalk)" },
+    { value: 'none', label: 'None' },
+    { value: 'indoor', label: 'Indoor' },
+    { value: 'outdoor1', label: 'Outdoor (Patio)' },
+    { value: 'outdoor2', label: 'Outdoor (Sidewalk)' }
   ];
-
-  const timeOptions = [
-    { value: "12", label: "12:00" },
-    { value: "13", label: "13:00" },
-    { value: "14", label: "14:00" },
-    { value: "18", label: "18:00" },
-    { value: "19", label: "19:00" },
-  ];
-
-  const navigate = useNavigate();
-
-  const onChange = (event) => {
-    setFormData(() => ({
-      ...formData,
-      [event.target.name]: event.target.value,
-    }));
-  };
-
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    console.table(formData);
-    const confirmed = window.confirm(
-      "Are you sure you want to submit the reservation?"
-    );
-
-    if (confirmed) {
-      // If the user confirms, navigate to the About Page
-      navigate("/confirmation");
-    }
-  };
 
   return (
     <div className="container">
@@ -72,14 +27,14 @@ const ReservationForm = (props) => {
                 title="Frist Name"
                 name="firstname"
                 value={formData.firstname}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
-               <InputField
+              <InputField
                 type="text"
                 title="Last Name"
                 name="lastname"
                 value={formData.lastname}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -88,7 +43,7 @@ const ReservationForm = (props) => {
                 title="Email"
                 name="email"
                 value={formData.email}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -97,7 +52,7 @@ const ReservationForm = (props) => {
                 title="Phone Number"
                 name="phone"
                 value={formData.phone}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -106,7 +61,7 @@ const ReservationForm = (props) => {
                 title="Date"
                 name="date"
                 value={formData.date}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -115,7 +70,7 @@ const ReservationForm = (props) => {
                 title="Number of Guest"
                 name="guests"
                 value={formData.guests}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -125,7 +80,7 @@ const ReservationForm = (props) => {
                 title="Time"
                 name="time"
                 value={formData.time}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -135,7 +90,7 @@ const ReservationForm = (props) => {
                 title="Occasion"
                 name="occasion"
                 value={formData.occasion}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -145,7 +100,7 @@ const ReservationForm = (props) => {
                 title="Seating preferences"
                 name="preference"
                 value={formData.preference}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
             <li>
@@ -154,7 +109,7 @@ const ReservationForm = (props) => {
                 title="Additional Comments"
                 name="other"
                 value={formData.other}
-                onChange={onChange}
+                onChange={onChangeHandler}
               />
             </li>
           </ul>
