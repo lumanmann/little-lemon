@@ -21,7 +21,10 @@ const fetchAPI = (date) => {
 // This function accepts the booking form data as a parameter and will return true if the data was successfully submitted.
 const submitAPI = (formData) => {
   for (let i in formData) {
-    if (formData[i]== '' || formData[i] == undefined) {
+    if (i == 'other') {
+      continue;
+    }
+    if (formData[i] == '' || formData[i] == undefined) {
       return false;
     }
   }
