@@ -9,11 +9,32 @@
   margin-bottom: 8px;
 }
 
+.input-element:focus {
+  outline: none !important;
+  border: 1px solid $primary;
+  box-shadow: 0 0 3px $primary;
+}
+
 .input-option {
   padding: 0.75rem;
   border: 1px solid grey;
   border-radius: 0.25rem;
 }
+
+.error {
+  color: $highlight;
+  outline: none !important;
+  border: 1px solid $highlight;
+  box-shadow: 0 0 3px $highlight;
+}
+
+.error:focus {
+  outline: none !important;
+  border: 1px solid $highlight;
+  box-shadow: 0 0 3px $highlight;
+}
+
+
 
 // ConfirmationModal
 .modal {
@@ -26,7 +47,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .modal-content {
@@ -40,7 +60,7 @@
 }
 
 .modal-content h3 {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
   font-weight: 600;
   margin-bottom: 12px;
 }

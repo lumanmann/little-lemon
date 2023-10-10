@@ -27,6 +27,10 @@ export default function Reservation() {
   const updateTimes = (timeOptions, date) => {
     const response = fetchAPI(new Date(date));
     const dict = response.map((x) => ({ value: x, label: x }));
+    setFormData(() => ({
+      ...formData,
+      time: response[0]
+    }));
     return dict;
   };
 
@@ -35,13 +39,16 @@ export default function Reservation() {
   const [timeOptions, dispatchOnDateChange] = useReducer(updateTimes, [], initializeTimes);
 
   const onChangeHandler = (event) => {
-    if (event.target.name == 'date') {
-      dispatchOnDateChange(event.target.value);
+    const name = event.target.name;
+    const value = event.target.value;
+
+    if (name == 'date') {
+      dispatchOnDateChange(value);
     }
 
     setFormData(() => ({
       ...formData,
-      [event.target.name]: event.target.value
+      [name]: value
     }));
   };
 
@@ -53,7 +60,7 @@ export default function Reservation() {
     if (isValid == true) {
       setShowConfirmModal(true);
     } else {
-      setErrorMsg('Something goes wrong. Please check your information.');
+      setErrorMsg('Something goes wrong. Please check your input data.');
       setShowErrorModal(true);
     }
   };
@@ -80,12 +87,63 @@ export default function Reservation() {
 
   const validForm = () => {
     for (let i in formData) {
+      if (i == 'other') {
+        continue;
+      }
+
       if (formData[i] == '' || formData[i] == undefined) {
+        return false;
+      }
+
+      if (verifyHandler(formData[i], i) == false) {
         return false;
       }
     }
 
     return true;
+  };
+
+  const verifyHandler = (value, name) => {
+    let msg = '';
+    let status = true;
+    switch (name) {
+      case 'email': {
+        const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+        if (isValidEmail == false) {
+          status = false;
+          msg = 'Please enter vaild email address.';
+        }
+
+        break;
+      }
+      case 'phone': {
+        const isValidPhone = /^\d{10}$/.test(value);
+        if (isValidPhone == false) {
+          status = false;
+          msg = 'Please enter vaild phone number.';
+        }
+        break;
+      }
+      case 'guests': {
+        const number = Number(value);
+        const isInt = /^-?[0-9]+$/.test(value);
+
+        if (isNaN(number)) {
+          status = false;
+          msg = 'Please enter a number';
+        } else if (isInt == false) {
+          status = false;
+          msg = 'Please enter an integer value.';
+        } else if (number <= 0) {
+          status = false;
+          msg = 'Please enter a positive non-zero number.';
+        }
+        break;
+      }
+    }
+
+    return { status: status, msg: msg };
   };
 
   return (
@@ -94,6 +152,7 @@ export default function Reservation() {
       <ReservationForm
         onChangeHandler={onChangeHandler}
         onSubmitHandler={onSubmitHandler}
+        verifyHandler={verifyHandler}
         timeOptions={timeOptions}
         formData={formData}
       />

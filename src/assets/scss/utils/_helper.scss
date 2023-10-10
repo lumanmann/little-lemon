@@ -84,7 +84,6 @@
   margin-right: 36px;
 }
 
-
 //  width
 .w-100 {
   width: 100%;
@@ -134,6 +133,10 @@
   color: $secondary;
 }
 
+.highlight {
+  color: $highlight;
+}
+
 // background
 .bg-primary {
   background: $primary;
@@ -163,4 +166,3 @@
   box-shadow: 0 0 0 2px #fff, 0 0 0 3px $primary;
   text-decoration: underline;
 }
-

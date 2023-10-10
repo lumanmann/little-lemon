@@ -1,11 +1,39 @@
-const InputField = ({ type, title, options, onChange, ...props }) => {
+import { useState } from 'react';
+
+const InputField = ({
+  type,
+  title,
+  options,
+  isRequired = true,
+  verifyHandler,
+  onChange,
+  ...props
+}) => {
+  const [errorMsg, setErrorMsg] = useState('');
+  const [showError, setShowError] = useState(false);
   let inputElement;
 
   const handleInputChange = (event) => {
+    if (isRequired && (event.target.value === '' || event.target.value === undefined)) {
+      setErrorMsg('This field cannot be empty.');
+      setShowError(true);
+    } else {
+      const result = verifyHandler(event.target.value, event.target.name);
+      if (result.status === true) {
+        setShowError(false);
+        setErrorMsg('');
+      } else {
+        setErrorMsg(result.msg);
+        setShowError(true);
+      }
+    }
+
     if (onChange) {
       onChange(event);
     }
   };
+
+  const labelContent = showError ? errorMsg : title;
 
   switch (type) {
     case 'date':
@@ -13,7 +41,7 @@ const InputField = ({ type, title, options, onChange, ...props }) => {
       inputElement = (
         <input
           type="date"
-          className="input-element"
+          className={`input-element ${showError ? 'error' : ''}`}
           id="datepicker"
           min={today.toISOString().split('T')[0]}
           onChange={handleInputChange}
@@ -23,27 +51,51 @@ const InputField = ({ type, title, options, onChange, ...props }) => {
       break;
     case 'text':
       inputElement = (
-        <input type="text" className="input-element" onChange={handleInputChange} {...props} />
+        <input
+          type="text"
+          className={`input-element ${showError ? 'error' : ''}`}
+          onChange={handleInputChange}
+          {...props}
+        />
       );
       break;
     case 'number':
       inputElement = (
-        <input type="number" className="input-element" onChange={handleInputChange} {...props} />
+        <input
+          type="number"
+          className={`input-element ${showError ? 'error' : ''}`}
+          onChange={handleInputChange}
+          {...props}
+        />
       );
       break;
     case 'email':
       inputElement = (
-        <input type="email" className="input-element" onChange={handleInputChange} {...props} />
+        <input
+          type="email"
+          className={`input-element ${showError ? 'error' : ''}`}
+          onChange={handleInputChange}
+          {...props}
+        />
       );
       break;
     case 'phone':
       inputElement = (
-        <input type="tel" className="input-element" onChange={handleInputChange} {...props} />
+        <input
+          type="tel"
+          placeholder="1234567890"
+          className={`input-element ${showError ? 'error' : ''}`}
+          onChange={handleInputChange}
+          {...props}
+        />
       );
       break;
     case 'option':
       inputElement = (
-        <select onChange={handleInputChange} {...props} className="input-element input-option">
+        <select
+          onChange={handleInputChange}
+          {...props}
+          className={`input-element input-option ${showError ? 'error' : ''}`}>
           {options.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -54,18 +106,31 @@ const InputField = ({ type, title, options, onChange, ...props }) => {
       break;
     case 'textarea':
       inputElement = (
-        <textarea className="input-element" rows={8} onChange={handleInputChange} {...props} />
+        <textarea
+          className={`input-element ${showError ? 'error' : ''}`}
+          rows={8}
+          onChange={handleInputChange}
+          {...props}
+        />
       );
       break;
     default:
       inputElement = (
-        <input type="text" className="input-element" onChange={handleInputChange} {...props} />
+        <input
+          type="text"
+          className={`input-element ${showError ? 'error' : ''}`}
+          onChange={handleInputChange}
+          {...props}
+        />
       );
   }
 
   return (
     <div className="primary input-field">
-      <label className="primary d-block me-16">{title}</label>
+      <label className={`primary d-block me-16 ${showError ? 'highlight' : ''}`}>
+        {labelContent}
+        {isRequired && !showError ? '*' : ''}
+      </label>
       {inputElement}
     </div>
   );

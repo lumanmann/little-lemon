@@ -1,7 +1,7 @@
 import InputField from '../utils/InputField';
 
 
-const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandler }) => {
+const ReservationForm = ({timeOptions, formData, verifyHandler, onChangeHandler, onSubmitHandler }) => {
   const occasionOptions = [
     { value: 'none', label: 'None' },
     { value: 'birthday', label: 'Birthday' },
@@ -28,6 +28,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Frist Name"
                 name="firstname"
                 value={formData.firstname}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
               <InputField
@@ -35,6 +36,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Last Name"
                 name="lastname"
                 value={formData.lastname}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -44,6 +46,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Email"
                 name="email"
                 value={formData.email}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -53,6 +56,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Phone Number"
                 name="phone"
                 value={formData.phone}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -62,6 +66,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Date"
                 name="date"
                 value={formData.date}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -71,6 +76,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Number of Guest"
                 name="guests"
                 value={formData.guests}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -81,6 +87,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Time"
                 name="time"
                 value={formData.time}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -91,6 +98,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Occasion"
                 name="occasion"
                 value={formData.occasion}
+                 verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -101,6 +109,7 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 title="Seating preferences"
                 name="preference"
                 value={formData.preference}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
@@ -109,7 +118,9 @@ const ReservationForm = ({timeOptions, formData, onChangeHandler, onSubmitHandle
                 type="textarea"
                 title="Additional Comments"
                 name="other"
+                isRequired={false}
                 value={formData.other}
+                verifyHandler={verifyHandler}
                 onChange={onChangeHandler}
               />
             </li>
