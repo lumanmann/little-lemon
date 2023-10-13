@@ -41,6 +41,7 @@ const InputField = ({
       inputElement = (
         <input
           type="date"
+          aria-label={props.name}
           className={`input-element ${showError ? 'error' : ''}`}
           id="datepicker"
           min={today.toISOString().split('T')[0]}
@@ -53,6 +54,7 @@ const InputField = ({
       inputElement = (
         <input
           type="text"
+          aria-label={props.name}
           className={`input-element ${showError ? 'error' : ''}`}
           onChange={handleInputChange}
           {...props}
@@ -63,6 +65,7 @@ const InputField = ({
       inputElement = (
         <input
           type="number"
+          aria-label={props.name}
           className={`input-element ${showError ? 'error' : ''}`}
           onChange={handleInputChange}
           {...props}
@@ -73,6 +76,7 @@ const InputField = ({
       inputElement = (
         <input
           type="email"
+          aria-label={props.name}
           className={`input-element ${showError ? 'error' : ''}`}
           onChange={handleInputChange}
           {...props}
@@ -83,6 +87,7 @@ const InputField = ({
       inputElement = (
         <input
           type="tel"
+          aria-label={props.name}
           placeholder="1234567890"
           className={`input-element ${showError ? 'error' : ''}`}
           onChange={handleInputChange}
@@ -93,11 +98,12 @@ const InputField = ({
     case 'option':
       inputElement = (
         <select
+          aria-label={props.name}
           onChange={handleInputChange}
           {...props}
           className={`input-element input-option ${showError ? 'error' : ''}`}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>
+          {options.map((option, index) => (
+            <option key={option.value}   aria-label={props.name+"-"+index} value={option.value}>
               {option.label}
             </option>
           ))}
@@ -107,6 +113,7 @@ const InputField = ({
     case 'textarea':
       inputElement = (
         <textarea
+        aria-label={props.name}
           className={`input-element ${showError ? 'error' : ''}`}
           rows={8}
           onChange={handleInputChange}
@@ -118,6 +125,7 @@ const InputField = ({
       inputElement = (
         <input
           type="text"
+          aria-label={props.name}
           className={`input-element ${showError ? 'error' : ''}`}
           onChange={handleInputChange}
           {...props}
@@ -127,7 +135,7 @@ const InputField = ({
 
   return (
     <div className="primary input-field">
-      <label className={`primary d-block me-16 ${showError ? 'highlight' : ''}`}>
+      <label aria-label={props.name + "-label"} className={`primary d-block me-16 ${showError ? 'highlight' : ''}`}>
         {labelContent}
         {isRequired && !showError ? '*' : ''}
       </label>
