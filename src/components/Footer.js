@@ -51,12 +51,12 @@ const Footer = () => {
             <p className="footer-title">Social Media</p>
             <ul className="flex social-media">
               <li>
-                <a>
+                <a href="https://www.instagram.com//">
                   <img src={Instagram} alt="instagram"></img>
                 </a>
               </li>
               <li>
-                <a>
+                <a href="https://www.facebook.com/">
                   <img src={Facebbok} alt="facebbok"></img>
                 </a>
               </li>

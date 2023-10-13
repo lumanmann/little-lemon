@@ -15,7 +15,7 @@ export default function MenuCard(props) {
         </div>
         <button className="menu-button">
           <p>Order a delivery</p>
-          <span class="material-icons-outlined">shopping_cart</span>
+          <span className="material-icons-outlined">shopping_cart</span>
         </button>
       </div>
     </article>

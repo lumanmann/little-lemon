@@ -6,8 +6,8 @@ import MenuCard from "../utils/MenuCard";
 const Specials = () => {
   return (
     <section className="specials">
-      <div class="container">
-        <div class="flex space-between mb-36 align-center">
+      <div className="container">
+        <div className="flex space-between mb-36 align-center">
           <h2 className="section-title ">Specials</h2>
           <button className="button specials-btn">Online Menu</button>
         </div>
